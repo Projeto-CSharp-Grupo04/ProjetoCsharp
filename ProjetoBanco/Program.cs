@@ -24,9 +24,9 @@ namespace ProjetoBanco
                 Console.WriteLine("                                                            ");
                 Console.WriteLine("                  1 - Cadastrar cliente.                    ");
                 Console.WriteLine("                  2 - Inserir cliente na fila.              ");
-                Console.WriteLine("                  3 - Listar a fila                         ");
-                Console.WriteLine("                  4 - Incluir cliente prioritário           ");
-                Console.WriteLine("                  5 - Atender cliente                       ");
+                Console.WriteLine("                  3 - Incluir cliente prioritário.          ");
+                Console.WriteLine("                  4 - Listar a fila.                        ");
+                Console.WriteLine("                  5 - Atender cliente.                      ");
                 Console.WriteLine("                                                            ");
                 Console.WriteLine("************************************************************");
                 Console.WriteLine("                                                            ");
