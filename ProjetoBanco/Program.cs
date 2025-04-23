@@ -16,15 +16,11 @@ namespace ProjetoBanco
 
             do
             {
-
-                
-
-                Console.WriteLine("                                                            ");
                 Console.WriteLine("************************************************************");
                 Console.WriteLine("                                                            ");
                 Console.WriteLine("                          Banco JK                          ");
                 Console.WriteLine("                                                            ");
-                Console.WriteLine("            Escolha a opção da operação a ser realizada:    ");
+                Console.WriteLine("     Escolha a opção da próxima operação a ser realizada:   ");
                 Console.WriteLine("                                                            ");
                 Console.WriteLine("                  1 - Cadastrar cliente.                    ");
                 Console.WriteLine("                  2 - Inserir cliente na fila.              ");
