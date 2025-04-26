@@ -8,57 +8,77 @@ namespace ProjetoBanco
 {
     internal class Fila
     {
-        protected int tamanho;
-        protected Cliente[] fila_comum;
-        protected ClientePrioritario[] fila_prioritaria;
-        public void DefinirTamanhoDaFila(int tamanho)
+        // a fila de todas os clientes
+        protected List<Cliente> fila = new List<Cliente>();
+
+        // tamanho máximo da fila
+        protected int tamanho_maximo = 10;
+
+        // inserir um cliente na fila
+        public void Adicionar(Cliente novo_cliente)
         {
-            this.fila_comum = new Cliente[tamanho];
-            this.fila_prioritaria = new ClientePrioritario[tamanho];
-            this.tamanho = tamanho;
-        }
-        public void InserirNaFila(Cliente cliente)
-        {
-            this.fila_comum.Append(cliente);
-            Console.WriteLine("Novo cliente na fila:");
-            cliente.exibirDados();
-        }
-        public void InserirNaFila(ClientePrioritario cliente)
-        {
-            this.fila_prioritaria.Append(cliente);
-            Console.WriteLine("Novo cliente na fila prioritario:");
-            cliente.exibirDados();
-        }
-        public void ListarClientesNaFila()
-        {
-            Console.WriteLine("Clientes na fila prioritária:");
-            /*for (int i = 0; i < this.fila_prioritaria.Count(); i++)
+            // só continuar se a fila couber
+            if (fila.Count < tamanho_maximo)
             {
-                this.fila_prioritaria[i].exibirDados();
-            }*/
-            Console.WriteLine("Clientes na fila comum:");
-            for (int i = 0; i < this.fila_comum.Count(); i++)
-            {
-                Console.WriteLine(this.fila_comum.);
-                //this.fila_comum[i].exibirDados();
-            }
-        }
-        public void AtenderOPróximo()
-        {
-            if (this.fila_prioritaria.Count() > 0)
-            {
-                this.fila_prioritaria.First().Atender();
-                this.fila_prioritaria.CopyTo(this.fila_prioritaria, 1);
-            }
-            else if (this.fila_comum.Count() > 0)
-            {
-                this.fila_comum.First().Atender();
-                this.fila_comum.CopyTo(this.fila_comum, 1);
+                // ações diferentes para clientes prioritários
+                if (novo_cliente is ClientePrioritario)
+                {
+                    // procurar pelo último cliente prioritário na fila
+                    int ultima_posicao = fila.FindLastIndex(cliente_na_fila => cliente_na_fila is ClientePrioritario);
+
+                    // não achou nenhum cliente prioritário
+                    if (ultima_posicao < 0)
+                    {
+                        // coloca no começo da fila
+                        fila.Insert(0, novo_cliente);
+                    }
+                    else
+                    {
+                        // coloca atrás do último cliente prioritário
+                        fila.Insert(ultima_posicao + 1, novo_cliente);
+                    }
+                }
+                else
+                {
+                    // colocar no final
+                    fila.Add(novo_cliente);
+                }
             }
             else
             {
-                Console.WriteLine("A fila está vazia");
+                // mensagem de erro ao inserir na fila por causa do tamanho máximo
+                FilaCheia();
             }
+        }
+
+        // antender o primeiro cliente
+        public void Atender()
+        {
+            // verificar se tem clientes na fila
+            if (fila.Count > 0)
+            {
+                // tirar da fila o primeiro cliente
+                fila.RemoveAt(0);
+            {
+            else
+            {
+                // mensagem de erro ao remover da fila pois já está vazia
+                FilaVazia();
+            {
+        }
+
+        // mostrar o tamanho da fila
+        public int Tamanho()
+        {
+            // retorna o número de clientes na fila
+            return fila.Count;
+        }
+
+        // mudar o tamanho da fila
+        public void DefinirTamanhoMaximo(int novo_tamanho_maximo)
+        {
+            // altera o tamanho máximo de clientes na fila
+            tamanho_maximo = novo_tamanho_maximo;
         }
     }
 }
