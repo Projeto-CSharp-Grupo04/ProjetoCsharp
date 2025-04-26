@@ -59,12 +59,12 @@ namespace ProjetoBanco
             {
                 // tirar da fila o primeiro cliente
                 fila.RemoveAt(0);
-            {
+            }
             else
             {
                 // mensagem de erro ao remover da fila pois já está vazia
                 FilaVazia();
-            {
+            }
         }
 
         // mostrar o tamanho da fila
