@@ -1,0 +1,7 @@
+C:\Users\rebek\Videos\ProjetoFila\ProjetoFila\bin\Debug\ProjetoFila.exe.config
+C:\Users\rebek\Videos\ProjetoFila\ProjetoFila\bin\Debug\ProjetoFila.exe
+C:\Users\rebek\Videos\ProjetoFila\ProjetoFila\bin\Debug\ProjetoFila.pdb
+C:\Users\rebek\Videos\ProjetoFila\ProjetoFila\obj\Debug\ProjetoFila.csproj.AssemblyReference.cache
+C:\Users\rebek\Videos\ProjetoFila\ProjetoFila\obj\Debug\ProjetoFila.csproj.CoreCompileInputs.cache
+C:\Users\rebek\Videos\ProjetoFila\ProjetoFila\obj\Debug\ProjetoFila.exe
+C:\Users\rebek\Videos\ProjetoFila\ProjetoFila\obj\Debug\ProjetoFila.pdb
